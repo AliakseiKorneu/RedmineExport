@@ -1,9 +1,9 @@
 # RedmineExport
 This script allows to export information about Redmine projects or issues in XML or JSON format.
 
+```
 usage: export.py [-h] -f {json,xml} -ht HOST -o {issues,projects}
                       [-p PROJECT]
-```
 optional arguments:
   -h, --help            show this help message and exit
   -f {json,xml}, --format {json,xml}
