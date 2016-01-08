@@ -25,5 +25,6 @@ Save info about issues from project "devops-test-project" from host "http://demo
 
 TODO:
 * Add limit selection
+* Add opportunity to get info about ALL projects/issues
 * Add sorting
 * Add XML Validation

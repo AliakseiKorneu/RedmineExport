@@ -29,14 +29,16 @@ def check_host_address (url):
 	else:
 		return False
 
-# Get issues info.		
-# There is no requirements for the limit of returned projects/issues and for order. Left by default.
+	
 # There is no XML validation. We get data that Redmine returnes.
+# Redmine doesn't return more than 100 values per page. 
+# If count of projects or issues more then 100 we need to parse xml or json, find count of issues/projects, use offset parameter and build a new xml or json. (TBD)
+# Get issues info.	
 def get_issues_info (arguments):
 	if (arguments.format == 'xml'):
-		url = arguments.host+'/issues.xml?project_id='+arguments.project
+		url = arguments.host+'/issues.xml?project_id='+arguments.project+'&limit=100'
 	if (arguments.format == 'json'):
-		url = arguments.host+'/issues.json?project_id='+arguments.project
+		url = arguments.host+'/issues.json?project_id='+arguments.project+'&limit=100'
 	try:
 		response = urllib2.urlopen(url)
 		info = response.read()
@@ -48,9 +50,9 @@ def get_issues_info (arguments):
 # Get projects info.
 def get_projects_info (arguments):
 	if (arguments.format == 'xml'):
-		url = arguments.host+'/projects.xml'
+		url = arguments.host+'/projects.xml?limit=100'
 	if (arguments.format == 'json'):
-		url = arguments.host+'/projects.json'
+		url = arguments.host+'/projects.json?limit=100'
 	try:
 		response = urllib2.urlopen(url)
 		info = response.read()
