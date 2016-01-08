@@ -15,12 +15,6 @@ optional arguments:
   -p PROJECT, --project PROJECT
                         Project ID (if issues selected)
 ```
-Example:
-```
-python export.py --format xml --host http://demo.redmine.org --objects issues --project devops-test-project > issues.xml
-```
-
-Save info about issues from project "devops-test-project" from host "http://demo.redmine.org" in XML format in issues.xml file.
 
 
 TODO:
