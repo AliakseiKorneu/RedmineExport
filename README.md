@@ -1,4 +1,12 @@
 # RedmineExport
+
+### Save FULL information about projects/issues, but only in JSON
+
+#### To use this script you must install Python module **xmltodict**
+```
+pip install xmltodict
+```
+
 This script allows to export information about Redmine projects or issues in XML or JSON format.
 
 ```
